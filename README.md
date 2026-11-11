@@ -1,13 +1,3 @@
-## Ödev 1
+# FitLife Spor Salonu Veritabanı
 
-Bu ödevde yapay zeka olarak Claude kullandım.
-
-**Claude'un ürettiği kısımlar:**
-- Hafta 2 senaryom olmadığı için FitLife spor salonu senaryosunu Claude önerdi.
-- `docs/er.md` (Mermaid ER diyagramı), `sql/schema.sql` ve `README.md` metninin ilk taslakları Claude'a ait. README'yi benim isteğimle biraz yeniden yazdırdım.
-
-**Benim yaptıklarım:**
-- GitHub reposunu, `week-05` dalını ve proje klasörlerini kendim oluşturdum.
-- PostgreSQL'i kendi bilgisayarıma kurdum ve çalıştırdım. Bu sırada aldığım hataları (PATH, Türkçe locale) Claude'un yardımıyla çözdüm.
-- `schema.sql` dosyasını temiz bir veritabanında çalıştırıp beş tablonun hatasız oluştuğunu `\dt` ile kontrol ettim.
-- Dosyaları commit'leyip GitHub'a gönderdim.# come381-midterm-beratokutannnn-cloud
+Bu projede küçük bir spor salonu için üyeleri, üyelik paketlerini, antrenörleri, grup derslerini ve ders rezervasyonlarını tutan bir veritabanı tasarladım. Üyeler derslere rezervasyon yaptırıyor ve bir ders birçok üyeye açık olduğu için bu çoktan çoğa ilişkiyi `class_booking` ara tablosuyla kurdum. Rezervasyon tarihi ve katılım bilgisi ilişkiye ait olduğundan bunları bu tabloya koydum, aynı üye aynı derse iki kez yazılmasın diye de `(member_id, class_id)` bileşik anahtarını seçtim. Üyelik paketini `member` içinde bir sütun yapmak yerine ayrı bir tabloya aldım, böylece fiyat ve süre bilgisi her üyede tekrar etmiyor. `schema.sql` dosyasını kendi bilgisayarımda PostgreSQL'de temiz bir veritabanında çalıştırdım ve beş tablonun hatasız oluştuğunu `\dt` ile kontrol ettim.
