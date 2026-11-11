@@ -1,0 +1,245 @@
+TRUNCATE TABLE
+INSERT 0 2
+INSERT 0 2
+INSERT 0 3
+INSERT 0 2
+INSERT 0 3
+T01
+psql:week-05/violations.sql:44: ERROR:  23502: null value in column "plan_name" of relation "membership_plan" violates not-null constraint
+DETAIL:  Failing row contains (3, null, 100.00, 1).
+SCHEMA NAME:  public
+TABLE NAME:  membership_plan
+COLUMN NAME:  plan_name
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T02
+psql:week-05/violations.sql:49: ERROR:  23502: null value in column "monthly_price" of relation "membership_plan" violates not-null constraint
+DETAIL:  Failing row contains (4, NN Plan 2, null, 1).
+SCHEMA NAME:  public
+TABLE NAME:  membership_plan
+COLUMN NAME:  monthly_price
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T03
+psql:week-05/violations.sql:54: ERROR:  23502: null value in column "duration_months" of relation "membership_plan" violates not-null constraint
+DETAIL:  Failing row contains (5, NN Plan 3, 100.00, null).
+SCHEMA NAME:  public
+TABLE NAME:  membership_plan
+COLUMN NAME:  duration_months
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T04
+psql:week-05/violations.sql:59: ERROR:  23502: null value in column "full_name" of relation "trainer" violates not-null constraint
+DETAIL:  Failing row contains (3, null, yoga).
+SCHEMA NAME:  public
+TABLE NAME:  trainer
+COLUMN NAME:  full_name
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T05
+psql:week-05/violations.sql:64: ERROR:  23502: null value in column "plan_id" of relation "member" violates not-null constraint
+DETAIL:  Failing row contains (4, null, Test Uye, t05@example.com, 2026-01-01).
+SCHEMA NAME:  public
+TABLE NAME:  member
+COLUMN NAME:  plan_id
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T06
+psql:week-05/violations.sql:69: ERROR:  23502: null value in column "full_name" of relation "member" violates not-null constraint
+DETAIL:  Failing row contains (5, 1, null, t06@example.com, 2026-01-01).
+SCHEMA NAME:  public
+TABLE NAME:  member
+COLUMN NAME:  full_name
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T07
+psql:week-05/violations.sql:74: ERROR:  23502: null value in column "email" of relation "member" violates not-null constraint
+DETAIL:  Failing row contains (6, 1, Test Uye, null, 2026-01-01).
+SCHEMA NAME:  public
+TABLE NAME:  member
+COLUMN NAME:  email
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T08
+psql:week-05/violations.sql:79: ERROR:  23502: null value in column "join_date" of relation "member" violates not-null constraint
+DETAIL:  Failing row contains (7, 1, Test Uye, t08@example.com, null).
+SCHEMA NAME:  public
+TABLE NAME:  member
+COLUMN NAME:  join_date
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T09
+psql:week-05/violations.sql:84: ERROR:  23502: null value in column "trainer_id" of relation "fitness_class" violates not-null constraint
+DETAIL:  Failing row contains (3, null, NN Ders 9, 2026-07-01 09:00:00, 10, 2026-07-01 10:00:00).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+COLUMN NAME:  trainer_id
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T10
+psql:week-05/violations.sql:89: ERROR:  23502: null value in column "class_name" of relation "fitness_class" violates not-null constraint
+DETAIL:  Failing row contains (4, 1, null, 2026-07-02 09:00:00, 10, 2026-07-02 10:00:00).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+COLUMN NAME:  class_name
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T11
+psql:week-05/violations.sql:94: ERROR:  23502: null value in column "start_time" of relation "fitness_class" violates not-null constraint
+DETAIL:  Failing row contains (5, 1, NN Ders 11, null, 10, 2026-07-03 10:00:00).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+COLUMN NAME:  start_time
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T12
+psql:week-05/violations.sql:99: ERROR:  23502: null value in column "capacity" of relation "fitness_class" violates not-null constraint
+DETAIL:  Failing row contains (6, 1, NN Ders 12, 2026-07-04 09:00:00, null, 2026-07-04 10:00:00).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+COLUMN NAME:  capacity
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T13
+psql:week-05/violations.sql:104: ERROR:  23502: null value in column "end_time" of relation "fitness_class" violates not-null constraint
+DETAIL:  Failing row contains (7, 1, NN Ders 13, 2026-07-05 09:00:00, 10, null).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+COLUMN NAME:  end_time
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T14
+psql:week-05/violations.sql:109: ERROR:  23502: null value in column "booking_date" of relation "class_booking" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, null, null).
+SCHEMA NAME:  public
+TABLE NAME:  class_booking
+COLUMN NAME:  booking_date
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T15
+psql:week-05/violations.sql:118: ERROR:  23505: duplicate key value violates unique constraint "uq_member_email"
+DETAIL:  Key (email)=(ali@example.com) already exists.
+SCHEMA NAME:  public
+TABLE NAME:  member
+CONSTRAINT NAME:  uq_member_email
+LOCATION:  _bt_check_unique, nbtinsert.c:673
+T16
+psql:week-05/violations.sql:123: ERROR:  23505: duplicate key value violates unique constraint "uq_membership_plan_name"
+DETAIL:  Key (plan_name)=(Basic) already exists.
+SCHEMA NAME:  public
+TABLE NAME:  membership_plan
+CONSTRAINT NAME:  uq_membership_plan_name
+LOCATION:  _bt_check_unique, nbtinsert.c:673
+T17
+psql:week-05/violations.sql:128: ERROR:  23505: duplicate key value violates unique constraint "uq_fitness_class_trainer_start"
+DETAIL:  Key (trainer_id, start_time)=(1, 2026-05-01 09:00:00) already exists.
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+CONSTRAINT NAME:  uq_fitness_class_trainer_start
+LOCATION:  _bt_check_unique, nbtinsert.c:673
+T18
+INSERT 0 1
+T19
+psql:week-05/violations.sql:138: ERROR:  23505: duplicate key value violates unique constraint "class_booking_pkey"
+DETAIL:  Key (member_id, class_id)=(1, 1) already exists.
+SCHEMA NAME:  public
+TABLE NAME:  class_booking
+CONSTRAINT NAME:  class_booking_pkey
+LOCATION:  _bt_check_unique, nbtinsert.c:673
+T20
+psql:week-05/violations.sql:147: ERROR:  23514: new row for relation "membership_plan" violates check constraint "chk_membership_plan_price"
+DETAIL:  Failing row contains (7, Eksi Fiyat, -1.00, 1).
+SCHEMA NAME:  public
+TABLE NAME:  membership_plan
+CONSTRAINT NAME:  chk_membership_plan_price
+LOCATION:  ExecConstraints, execMain.c:2081
+T21
+INSERT 0 1
+T22
+psql:week-05/violations.sql:157: ERROR:  23514: new row for relation "membership_plan" violates check constraint "chk_membership_plan_duration"
+DETAIL:  Failing row contains (9, Sifir Sure, 100.00, 0).
+SCHEMA NAME:  public
+TABLE NAME:  membership_plan
+CONSTRAINT NAME:  chk_membership_plan_duration
+LOCATION:  ExecConstraints, execMain.c:2081
+T23
+psql:week-05/violations.sql:162: ERROR:  23514: new row for relation "fitness_class" violates check constraint "chk_fitness_class_capacity"
+DETAIL:  Failing row contains (10, 1, Sifir Kontenjan, 2026-06-01 09:00:00, 0, 2026-06-01 10:00:00).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+CONSTRAINT NAME:  chk_fitness_class_capacity
+LOCATION:  ExecConstraints, execMain.c:2081
+T24
+INSERT 0 1
+T25
+psql:week-05/violations.sql:172: ERROR:  23514: new row for relation "trainer" violates check constraint "chk_trainer_specialty"
+DETAIL:  Failing row contains (4, Gecersiz Uzman, ballet).
+SCHEMA NAME:  public
+TABLE NAME:  trainer
+CONSTRAINT NAME:  chk_trainer_specialty
+LOCATION:  ExecConstraints, execMain.c:2081
+T26
+INSERT 0 1
+T27
+psql:week-05/violations.sql:183: ERROR:  23514: new row for relation "fitness_class" violates check constraint "chk_fitness_class_time_order"
+DETAIL:  Failing row contains (12, 1, Ters Ders, 2026-06-03 10:00:00, 10, 2026-06-03 09:00:00).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+CONSTRAINT NAME:  chk_fitness_class_time_order
+LOCATION:  ExecConstraints, execMain.c:2081
+T28
+psql:week-05/violations.sql:188: ERROR:  23514: new row for relation "fitness_class" violates check constraint "chk_fitness_class_time_order"
+DETAIL:  Failing row contains (13, 1, Sifir Sureli Ders, 2026-06-04 09:00:00, 10, 2026-06-04 09:00:00).
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+CONSTRAINT NAME:  chk_fitness_class_time_order
+LOCATION:  ExecConstraints, execMain.c:2081
+T29
+INSERT 0 1
+T30
+psql:week-05/violations.sql:198: ERROR:  23514: new row for relation "member" violates check constraint "chk_member_email_format"
+DETAIL:  Failing row contains (9, 1, Hatali Eposta, ornek-eposta.com, 2026-01-01).
+SCHEMA NAME:  public
+TABLE NAME:  member
+CONSTRAINT NAME:  chk_member_email_format
+LOCATION:  ExecConstraints, execMain.c:2081
+T31
+psql:week-05/violations.sql:207: ERROR:  23503: insert or update on table "member" violates foreign key constraint "fk_member_membership_plan"
+DETAIL:  Key (plan_id)=(999) is not present in table "membership_plan".
+SCHEMA NAME:  public
+TABLE NAME:  member
+CONSTRAINT NAME:  fk_member_membership_plan
+LOCATION:  ri_ReportViolation, ri_triggers.c:2783
+T32
+psql:week-05/violations.sql:212: ERROR:  23503: insert or update on table "fitness_class" violates foreign key constraint "fk_fitness_class_trainer"
+DETAIL:  Key (trainer_id)=(999) is not present in table "trainer".
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+CONSTRAINT NAME:  fk_fitness_class_trainer
+LOCATION:  ri_ReportViolation, ri_triggers.c:2783
+T33
+psql:week-05/violations.sql:217: ERROR:  23503: insert or update on table "class_booking" violates foreign key constraint "fk_class_booking_member"
+DETAIL:  Key (member_id)=(999) is not present in table "member".
+SCHEMA NAME:  public
+TABLE NAME:  class_booking
+CONSTRAINT NAME:  fk_class_booking_member
+LOCATION:  ri_ReportViolation, ri_triggers.c:2783
+T34
+psql:week-05/violations.sql:222: ERROR:  23503: insert or update on table "class_booking" violates foreign key constraint "fk_class_booking_class"
+DETAIL:  Key (class_id)=(999) is not present in table "fitness_class".
+SCHEMA NAME:  public
+TABLE NAME:  class_booking
+CONSTRAINT NAME:  fk_class_booking_class
+LOCATION:  ri_ReportViolation, ri_triggers.c:2783
+T35
+psql:week-05/violations.sql:231: ERROR:  23001: update or delete on table "membership_plan" violates RESTRICT setting of foreign key constraint "fk_member_membership_plan" on table "member"
+DETAIL:  Key (plan_id)=(1) is referenced from table "member".
+SCHEMA NAME:  public
+TABLE NAME:  member
+CONSTRAINT NAME:  fk_member_membership_plan
+LOCATION:  ri_ReportViolation, ri_triggers.c:2797
+T36
+psql:week-05/violations.sql:236: ERROR:  23001: update or delete on table "trainer" violates RESTRICT setting of foreign key constraint "fk_fitness_class_trainer" on table "fitness_class"
+DETAIL:  Key (trainer_id)=(1) is referenced from table "fitness_class".
+SCHEMA NAME:  public
+TABLE NAME:  fitness_class
+CONSTRAINT NAME:  fk_fitness_class_trainer
+LOCATION:  ri_ReportViolation, ri_triggers.c:2797
+T37
+ member1_bookings_before 
+-------------------------
+                       2
+(1 row)
+
+DELETE 1
+ member1_bookings_after 
+------------------------
+                      0
+(1 row)
+

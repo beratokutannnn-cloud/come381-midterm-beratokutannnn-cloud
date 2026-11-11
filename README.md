@@ -1,1 +1,3 @@
-# come381-midterm-beratokutannnn-cloud
+# FitLife Spor Salonu Veritabanı
+
+Bu projede küçük bir spor salonu için üyeleri, üyelik paketlerini, antrenörleri, grup derslerini ve ders rezervasyonlarını tutan bir veritabanı tasarladım. Üyeler derslere rezervasyon yaptırıyor ve bir ders birçok üyeye açık olduğu için bu çoktan çoğa ilişkiyi `class_booking` ara tablosuyla kurdum. Rezervasyon tarihi ve katılım bilgisi ilişkiye ait olduğundan bunları bu tabloya koydum, aynı üye aynı derse iki kez yazılmasın diye de `(member_id, class_id)` bileşik anahtarını seçtim. Üyelik paketini `member` içinde bir sütun yapmak yerine ayrı bir tabloya aldım, böylece fiyat ve süre bilgisi her üyede tekrar etmiyor. `schema.sql` dosyasını kendi bilgisayarımda PostgreSQL'de temiz bir veritabanında çalıştırdım ve beş tablonun hatasız oluştuğunu `\dt` ile kontrol ettim.
